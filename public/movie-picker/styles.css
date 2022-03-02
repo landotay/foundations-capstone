@@ -1,0 +1,49 @@
+
+body {
+    background-color: #A7C7E7;
+    margin: auto; 
+}
+
+header {
+    display: flex;
+    background-color: #6495ED;
+    color: 	#36454F;
+    width: 100%;
+    height: 10vh;
+    margin-bottom: 25px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+h1 {
+    font: size 50px;
+    margin-left: 10px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 25px;
+    
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+    font: 100px;
+    padding: 15px;
+}
+
+a:hover {
+   color: #D3D3D3;
+}
+
+#steveKith {
+    display: flex;
+    justify-content: center;
+   
+}
+
+
