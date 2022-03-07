@@ -1,35 +1,14 @@
-const moviesContainer = document.querySelector('#movies-container')
-const form = document.querySelector('form')
+const moviesContainer = document.getElementById('movies-container')
 
-const baseURL = `http://localhost:4001/public/home.html`
 
-const moviesCallback = ({ data: movies }) => displayMovies(movies)
+
+const moviesCallback = (data) => displayMovies(data)
 const errCallback = err => console.log(err.response.data)
 
-const getAllMovies = () => axios.get(baseURL).then(moviesCallback).catch(errCallback)
-const createMovie = body => axios.post(baseURL, body).then(moviesCallback).catch(errCallback)
-const deleteMovie = id => axios.delete(`${baseURL}/${id}`).then(moviesCallback).catch(errCallback)
-const updateMovie = (id, type) => axios.put(`${baseURL}/${id}`, {type}).then(moviesCallback).catch(errCallback)
+console.log('JavaScript linked successfully')
 
-function submitHandler(e) {
-    e.preventDefault()
+const getAllMovies = () => axios.get('/api/movies').then(res => moviesCallback(res.data)).catch(errCallback)
 
-    let title = document.querySelector('#title')
-    let rating = document.querySelector('input[name="ratings"]:checked')
-    
-
-    let bodyObj = {
-        title: title.value,
-        rating: rating.value, 
-        imageURL: imageURL.value
-    }
-
-    createMovie(bodyObj)
-
-    title.value = ''
-    rating.checked = false
-    imageURL.value = ''
-}
 
 function createMovieCard(movie) {
     const movieCard = document.createElement('div')
@@ -50,12 +29,12 @@ function createMovieCard(movie) {
 }
 
 function displayMovies(arr) {
+    console.log(arr)
     moviesContainer.innerHTML = ``
     for (let i = 0; i < arr.length; i++) {
         createMovieCard(arr[i])
     }
 }
 
-form.addEventListener('submit', submitHandler)
 
 getAllMovies()
