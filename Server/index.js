@@ -10,7 +10,7 @@ const port = process.env.PORT || 4001
 
 app.use(express.json())
 app.use(cors())
-const getAllMovies = () =>
+
 
 // ENDPOINTS
 
@@ -32,10 +32,15 @@ app.use('/js', express.static(path.join(__dirname, '../public/movie-list/main.js
 
 app.get('/api/movies', ctrl.getAllMovies)
 
+app.put('/api/movies/:id', ctrl.updateMovie)
+
 //movie picker
 app.get('/public/movie-picker/moviepicker.html', (req, res) => {
     res.sendFile(path.join(__dirname, '../public/movie-picker/moviePicker.html'))
 })
+app.use('/moviep.js', express.static(path.join(__dirname, '../public/movie-picker/main.js')))
+
+app.get('/api/randomMovie', ctrl.movieTitle)
 
 app.use('/public/movie-picker/styles.css', express.static(path.join(__dirname, '../public/movie-picker/styles.css')))
 

@@ -9,6 +9,11 @@ console.log('JavaScript linked successfully')
 
 const getAllMovies = () => axios.get('/api/movies').then(res => moviesCallback(res.data)).catch(errCallback)
 
+const updateMovie = (id, type) => axios.put(`/api/movies/${id}`, {type}).then(() => {
+    moviesCallback
+    location.reload()
+}).catch(errCallback)
+
 
 function createMovieCard(movie) {
     const movieCard = document.createElement('div')
@@ -21,7 +26,7 @@ function createMovieCard(movie) {
         <p class="movie-rating">${movie.rating} stars</p>
         <button onclick="updateMovie(${movie.id}, 'plus')">+</button>
     </div>
-    <button onclick="deleteMovie(${movie.id})">delete</button>
+    <button class='watch' id='watched'>To Watch</button>
     `
 
 
@@ -36,5 +41,8 @@ function displayMovies(arr) {
     }
 }
 
-
 getAllMovies()
+
+const btnWatch = document.getElementById('watched').addEventListener('click', () => {
+    btnWatch.innerText = "Watched"
+})

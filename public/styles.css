@@ -10,14 +10,14 @@ header {
     color: 	#36454F;
     width: 100%;
     height: 10vh;
-    margin-bottom: 25px;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 5vh;
 }
 
 h1 {
-    font: size 50px;
+    font-size:25px;
     margin-left: 10px;
 }
 
@@ -39,11 +39,28 @@ a {
 a:hover {
    color: #D3D3D3;
 }
+#kithContainer {
+    display: flex;
+    width: 100%;
+    height: 70vh;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+}
 
 #steveKith {
-    display: flex;
-    justify-content: center;
-   
+
+  background-image: url("https://cdn.shopify.com/s/files/1/0094/2252/files/1_70411018-ac2c-45d3-8186-f00361f67013.jpg?v=1644245088");
+  background-position: 50% 25%;
+  background-repeat: no-repeat;
+  background-size: 110%;
+    width: 90%;
+    height: 100%;
+}
+
+#textContainer {
+    width: 100%;
+    height: 20vh;
 }
 
 
