@@ -26,7 +26,6 @@ function createMovieCard(movie) {
         <p class="movie-rating">${movie.rating} stars</p>
         <button onclick="updateMovie(${movie.id}, 'plus')">+</button>
     </div>
-    <button class='watch' id='watched'>To Watch</button>
     `
 
 
@@ -41,8 +40,10 @@ function displayMovies(arr) {
     }
 }
 
-getAllMovies()
+setTimeout(getAllMovies(), 1000)
 
-const btnWatch = document.getElementById('watched').addEventListener('click', () => {
+const btnWatch = document.querySelector('.watch')
+
+btnWatch.addEventListener('click', () => {
     btnWatch.innerText = "Watched"
 })

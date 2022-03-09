@@ -49,18 +49,28 @@ a:hover {
 }
 
 #steveKith {
-
-  background-image: url("https://cdn.shopify.com/s/files/1/0094/2252/files/1_70411018-ac2c-45d3-8186-f00361f67013.jpg?v=1644245088");
-  background-position: 50% 25%;
-  background-repeat: no-repeat;
-  background-size: 110%;
+    background-image: url("https://cdn.shopify.com/s/files/1/0094/2252/files/1_70411018-ac2c-45d3-8186-f00361f67013.jpg?v=1644245088");
+    background-position: 50% 25%;
+    background-repeat: no-repeat;
+    background-size: 110%;
     width: 90%;
     height: 100%;
+    margin-bottom: 3vh;
 }
 
 #textContainer {
+    display: flex;
     width: 100%;
     height: 20vh;
+    justify-content: center;
+    align-items: center;
+    
 }
+#text{
+    width: 80%;
+    height: 100%;
+    text-align: center;
+}
+
 
 
