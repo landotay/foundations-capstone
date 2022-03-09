@@ -40,13 +40,19 @@ a:hover {
    color: #D3D3D3;
 }
 
-#login-features {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 77vh;
-    width: 100%;
+.hero {
+    background-color: #233748;
+    height: 74vh;
+    width: 80%;
+    margin-bottom: 3vh;
+
 }
+.hero h2 {
+    color: #A7C7E7;
+    text-align: center;
+    padding-top: 4vh;
+}
+
 footer {
     display: flex;
     background-color: #6495ED;

@@ -3,10 +3,10 @@ const path = require('path')
 const cors = require('cors')
 const movies = require('./db.json')
 const ctrl = require('./controller')
-
+const {seed} = require('./seed.js')
 const app = express()
 
-const port = process.env.PORT || 4001
+const port = process.env.PORT || 5024
 
 app.use(express.json())
 app.use(cors())
@@ -22,6 +22,7 @@ app.get('/public/home.html', (req, res) => {
 app.use('/styles.css', express.static(path.join(__dirname, '../public/styles.css')))
 
 //movie list
+app.post('/seed', seed)
 app.get('/public/movie-list/movieList.html', (req, res) => {
     res.sendFile(path.join(__dirname, '../public/movie-list/movieList.html'))
 })
@@ -48,9 +49,7 @@ app.use('/public/movie-picker/styles.css', express.static(path.join(__dirname, '
 app.get('/public/login/login.html', (req, res) => {
     res.sendFile(path.join(__dirname, '../public/login/login.html'))
 })
-
 app.use('/public/login/styles.css', express.static(path.join(__dirname, '../public/login/styles.css')))
-
 
 
 

@@ -19,12 +19,12 @@ function createMovieCard(movie) {
     const movieCard = document.createElement('div')
     movieCard.classList.add('movie-card')
 
-    movieCard.innerHTML = `<img alt='movie cover' src=${movie.imageURL} class="movie-cover"/>
-    <p class="movie-title">${movie.title}</p>
+    movieCard.innerHTML = `<img alt='movie cover' src=${movie.movie_img} class="movie-cover"/>
+    <p class="movie-title">${movie.movie_title}</p>
     <div class="btns-container">
-        <button onclick="updateMovie(${movie.id}, 'minus')">-</button>
-        <p class="movie-rating">${movie.rating} stars</p>
-        <button onclick="updateMovie(${movie.id}, 'plus')">+</button>
+        <button onclick="updateMovie(${movie.movie_id}, 'minus')">-</button>
+        <p class="movie-rating">${movie.movie_rating} stars</p>
+        <button onclick="updateMovie(${movie.movie_id}, 'plus')">+</button>
     </div>
     `
 
@@ -40,10 +40,5 @@ function displayMovies(arr) {
     }
 }
 
-setTimeout(getAllMovies(), 1000)
+getAllMovies()
 
-const btnWatch = document.querySelector('.watch')
-
-btnWatch.addEventListener('click', () => {
-    btnWatch.innerText = "Watched"
-})
