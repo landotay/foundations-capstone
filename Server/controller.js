@@ -23,7 +23,6 @@ module.exports = {
     updateMovie: async(req, res) => {
         let {id} = req.params
         let {type} = req.body
-        // let index = movies.findIndex(elem => elem.id === +id)
         let [movie] = await sequelize.query(`
             SELECT * FROM movies
             WHERE movie_id = ${id}

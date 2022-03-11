@@ -49,6 +49,7 @@ app.use('/public/movie-picker/styles.css', express.static(path.join(__dirname, '
 app.get('/public/login/login.html', (req, res) => {
     res.sendFile(path.join(__dirname, '../public/login/login.html'))
 })
+app.use('/quote.js', express.static(path.join(__dirname, '../public/login/login.js')))
 app.use('/public/login/styles.css', express.static(path.join(__dirname, '../public/login/styles.css')))
 
 
